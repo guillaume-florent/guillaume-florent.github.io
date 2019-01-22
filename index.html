@@ -1,10 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-In construction
-</body>
-</html>
+---
+layout: default
+title: Guillaume Florent's Github Pages
+---
+<div class="blurb">
+	<h1>Guillaume Florent's Github Pages</h1>
+	<p>Welcome to my GitHub Pages, where most of my open source development projects live</p>
+	<p>These projects are about yacht design, aero and hydrodynamics, CAD, navigation ...</p>
+	<p>The goal is to develop a complete toolchain for yacht design, with a focus on racing.</p>
+	<p>The following areas are covered:</p>
+	<ul>
+		<li>parametric and algorithmic shape generation</li>
+		<li>hydrostatics</li>
+		<li>2d foil sections optimization</li>
+		<li>performance prediction</li>
+		<li>race simulation</li>
+		<li>CFD RANS cases generation</li>
+	</ul>
+	<p></p>
+	<h2>Latest blog posts</h2>
+	{% for post in site.categories.blog %}
+	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	{% endfor %}
+	<p></p>
+	<h2>Latest documentation</h2>
+	{% for post in site.categories.doc %}
+	    <li><span>{{ post.date | date_to_string }}</span> » <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a></li>
+	{% endfor %}
+	<p></p>
+</div><!-- /.blurb -->
